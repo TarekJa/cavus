@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SARRAFALAR ÇAVUŞ – إدارة الصناديق</title>
-
   <!-- Favicons (كل اللي طلبتها) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -15,34 +14,29 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     :root {
-      --primary:    #0a0a0f;
-      --primary-d:  #000000;
-      --gold:       #d4af37;
-      --gold-dark:  #b8975e;
-      --gold-glow:  rgba(212,175,55,0.25);
-      --success:    #d4af37;
-      --sell:       #ef4444;
-      --buy:        #d4af37;
-      --bg:         #05050a;
-      --card:       #111118;
-      --border:     rgba(212,175,55,0.18);
-      --text:       #f3f4f6;
+      --primary: #0a0a0f;
+      --primary-d: #000000;
+      --gold: #d4af37;
+      --gold-dark: #b8975e;
+      --gold-glow: rgba(212,175,55,0.25);
+      --success: #d4af37;
+      --sell: #ef4444;
+      --buy: #d4af37;
+      --bg: #05050a;
+      --card: #111118;
+      --border: rgba(212,175,55,0.18);
+      --text: #f3f4f6;
       --text-light: #9ca3af;
-      --shadow:     0 8px 32px rgba(212,175,55,0.12);
-      --radius:     16px;
+      --shadow: 0 8px 32px rgba(212,175,55,0.12);
+      --radius: 16px;
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
-
     body {
       font-family: 'Tajawal', system-ui, sans-serif;
       background: var(--bg);
@@ -50,7 +44,6 @@
       line-height: 1.6;
       min-height: 100vh;
     }
-
     header {
       background: linear-gradient(135deg, #000000, #0f0f17);
       color: var(--gold);
@@ -65,23 +58,19 @@
       justify-content: center;
       gap: 1.2rem;
     }
-
     .logo-img {
       max-width: 160px;
       height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(212,175,55,0.35);
     }
-
     .logo-text {
       font-size: 1.85rem;
       font-weight: 700;
       letter-spacing: 1.5px;
       color: white;
     }
-
     .container { max-width: 1180px; margin: 2.2rem auto; padding: 0 1.4rem; }
-
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -89,7 +78,6 @@
       justify-content: center;
       margin-bottom: 2.5rem;
     }
-
     .tab-btn {
       padding: 1rem 2.2rem;
       font-size: 1.12rem;
@@ -101,20 +89,17 @@
       cursor: pointer;
       transition: all .3s;
     }
-
     .tab-btn:hover {
       background: rgba(212,175,55,0.18);
       transform: translateY(-3px);
       box-shadow: 0 10px 30px var(--gold-glow);
     }
-
     .tab-btn.active {
       background: var(--gold);
       color: var(--primary-d);
       border-color: var(--gold);
       box-shadow: 0 8px 25px rgba(212,175,55,0.3);
     }
-
     .section {
       background: var(--card);
       border-radius: var(--radius);
@@ -123,9 +108,7 @@
       border: 1px solid rgba(212,175,55,0.2);
       display: none;
     }
-
     .section.active { display: block; }
-
     h2 {
       color: var(--gold);
       text-align: center;
@@ -133,7 +116,6 @@
       margin-bottom: 1.8rem;
       position: relative;
     }
-
     h2::after {
       content: '';
       width: 100px;
@@ -146,7 +128,6 @@
       border-radius: 4px;
       box-shadow: 0 0 20px rgba(212,175,55,0.4);
     }
-
     .form-card {
       background: rgba(20,20,35,0.7);
       border: 1px solid rgba(212,175,55,0.25);
@@ -155,20 +136,17 @@
       margin-bottom: 2rem;
       backdrop-filter: blur(10px);
     }
-
     .form-card h3 {
       text-align: center;
       color: var(--gold);
       margin-bottom: 1.4rem;
       font-size: 1.4rem;
     }
-
     .form-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.4rem;
     }
-
     label {
       display: block;
       margin-bottom: 0.6rem;
@@ -176,7 +154,6 @@
       color: var(--text-light);
       font-size: 1rem;
     }
-
     input, select {
       width: 100%;
       padding: 0.95rem 1.2rem;
@@ -187,19 +164,17 @@
       color: white;
       transition: all .25s;
     }
-
     input:focus, select:focus {
       outline: none;
       border-color: var(--gold);
       box-shadow: 0 0 0 4px rgba(212,175,55,0.2);
       background: rgba(255,255,255,0.06);
     }
-
     /* === التعديل الجديد فقط: تحسين القوائم المنسدلة (select) === */
     select {
-      background: #111118;           /* خلفية سوداء داكنة */
-      color: #f5d76e;                /* نص ذهبي واضح */
-      border: 1px solid #d4af37;     /* حدود ذهبية رفيعة */
+      background: #111118; /* خلفية سوداء داكنة */
+      color: #f5d76e; /* نص ذهبي واضح */
+      border: 1px solid #d4af37; /* حدود ذهبية رفيعة */
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4af37' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
@@ -207,30 +182,25 @@
       background-size: 12px;
       padding-right: 1rem;
     }
-
     select:focus {
       outline: none;
       border-color: #f5d76e;
       box-shadow: 0 0 0 4px rgba(245,215,110,0.2);
     }
-
     select option {
       background: #111118;
       color: #f5d76e;
       padding: 10px;
     }
-
     select option:not(:last-child) {
       border-bottom: 1px solid rgba(212,175,55,0.2); /* خط فاصل رفيع ذهبي */
     }
-
     select optgroup {
       font-weight: 700;
       color: var(--gold);
       background: rgba(20,20,35,0.9);
       padding: 8px;
     }
-
     .action-row {
       display: flex;
       flex-wrap: wrap;
@@ -238,7 +208,6 @@
       justify-content: center;
       margin-top: 2rem;
     }
-
     .btn-action {
       padding: 1.1rem 3rem;
       font-size: 1.18rem;
@@ -254,15 +223,12 @@
       gap: 10px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
-
     .btn-sell { background: linear-gradient(135deg, #ef4444, #b91c1c); }
-    .btn-buy  { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); }
-
+    .btn-buy { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); }
     .btn-action:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 35px var(--gold-glow);
     }
-
     .report-controls {
       display: flex;
       flex-wrap: wrap;
@@ -270,7 +236,6 @@
       justify-content: center;
       margin: 1.8rem 0;
     }
-
     .report-btn {
       padding: 1rem 2.2rem;
       font-size: 1.05rem;
@@ -282,11 +247,9 @@
       min-width: 170px;
       transition: all .25s;
     }
-
-    .btn-day   { background: var(--success); }
-    .btn-week  { background: #3b82f6; }
+    .btn-day { background: var(--success); }
+    .btn-week { background: #3b82f6; }
     .btn-print { background: var(--gold-dark); display: none; }
-
     .report-output {
       background: rgba(20,20,35,0.8);
       border: 1px solid rgba(212,175,55,0.3);
@@ -296,30 +259,24 @@
       display: none;
       backdrop-filter: blur(12px);
     }
-
     .report-output.show { display: block; }
-
     .report-table {
       width: 100%;
       border-collapse: collapse;
       margin: 1.2rem 0;
       font-size: 0.98rem;
     }
-
     .report-table th, .report-table td {
       border: 1px solid rgba(212,175,55,0.25);
       padding: 1rem 1.2rem;
       text-align: right;
     }
-
     .report-table th {
       background: rgba(212,175,55,0.2);
       color: var(--gold);
       font-weight: 600;
     }
-
     .report-table tr:nth-child(even) { background: rgba(255,255,255,0.03); }
-
     .stock-summary {
       margin-top: 2rem;
       padding: 1.4rem;
@@ -327,13 +284,11 @@
       border-radius: 10px;
       border: 1px solid rgba(34,197,94,0.25);
     }
-
     .stock-summary h5 {
       margin-bottom: 1rem;
       color: var(--success);
       font-size: 1.2rem;
     }
-
     .total-profit {
       margin-top: 2rem;
       padding: 1.6rem;
@@ -344,10 +299,8 @@
       font-weight: 700;
       border: 1px solid rgba(212,175,55,0.35);
     }
-
     .positive { color: var(--buy); }
     .negative { color: var(--sell); }
-
     .modal {
       display: none;
       position: fixed;
@@ -358,7 +311,6 @@
       align-items: center;
       justify-content: center;
     }
-
     .modal-content {
       background: var(--card);
       padding: 2rem 3rem;
@@ -370,10 +322,8 @@
       font-size: 1.2rem;
       border: 2px solid var(--gold);
     }
-
     .modal-content.success { color: var(--gold); }
-    .modal-content.error   { color: var(--sell); }
-
+    .modal-content.error { color: var(--sell); }
     @media print {
       header, .tabs, .form-card, .report-controls, .modal { display: none !important; }
       .report-output { display: block !important; margin: 0; padding: 0; border: none; background: white; box-shadow: none; }
@@ -381,7 +331,6 @@
       .print-logo img { max-width: 260px; height: auto; }
       .report-table { page-break-inside: avoid; }
     }
-
     @media (max-width: 720px) {
       .form-grid { grid-template-columns: 1fr; }
       .action-row { flex-direction: column; }
@@ -390,24 +339,19 @@
   </style>
 </head>
 <body>
-
 <header>
-  <img src="https://i.imgur.com/لوغوك_هون_512.png" alt="SARRAFALAR ÇAVUŞ" class="logo-img">
+  <img src="logo.png" alt="SARRAFALAR ÇAVUŞ" class="logo-img">
   <div class="logo-text">SARRAFALAR ÇAVUŞ</div>
 </header>
-
 <div class="container">
-
   <div class="tabs">
     <button class="tab-btn active" data-tab="gold">صندوق الذهب</button>
     <button class="tab-btn" data-tab="currency">صندوق العملات</button>
     <button class="tab-btn" data-tab="transfer">صندوق الحوالات</button>
   </div>
-
   <!-- صندوق الذهب -->
   <div id="gold" class="section active">
     <h2>صندوق الذهب</h2>
-
     <div class="form-card">
       <h3>عملية ذهب</h3>
       <div class="form-grid">
@@ -429,23 +373,19 @@
             </optgroup>
           </select>
         </div>
-
         <div id="quantity-container">
           <label id="quantity-label">الكمية</label>
           <input type="number" step="0.01" min="0.01" id="gold-qty" disabled placeholder="اختر النوع أولاً">
         </div>
-
         <div>
           <label>السعر TL</label>
           <input type="number" min="0" id="gold-total" placeholder="السعر الإجمالي بالليرة التركية">
         </div>
-
         <div>
           <label>ملاحظة</label>
           <input type="text" id="gold-note" placeholder="أدخل تفاصيل إضافية (مثال: اسم الزبون)">
         </div>
       </div>
-
       <div class="action-row">
         <button class="btn-action btn-sell" onclick="saveGold('sell')">
           <i class="fas fa-arrow-right-from-bracket"></i> بيع
@@ -455,22 +395,18 @@
         </button>
       </div>
     </div>
-
     <div class="report-controls">
-      <button class="report-btn btn-day"  onclick="generateReport('gold','daily')">تقرير يومي</button>
+      <button class="report-btn btn-day" onclick="generateReport('gold','daily')">تقرير يومي</button>
       <button class="report-btn btn-week" onclick="generateReport('gold','weekly')">تقرير أسبوعي</button>
       <button class="report-btn btn-print" id="gold-print-btn" style="display:none;" onclick="printReport('gold')">
         <i class="fas fa-print"></i> طباعة / PDF
       </button>
     </div>
-
     <div id="gold-report" class="report-output"></div>
   </div>
-
   <!-- صندوق العملات -->
   <div id="currency" class="section">
     <h2>صندوق العملات</h2>
-
     <div class="form-card">
       <h3>عملية صرف</h3>
       <div class="form-grid">
@@ -484,23 +420,19 @@
             <option value="SYP">SYP – ليرة سورية</option>
           </select>
         </div>
-
         <div>
           <label>المبلغ</label>
           <input type="number" step="0.01" min="0" id="cur-amount" placeholder="المبلغ بالعملة المختارة">
         </div>
-
         <div>
           <label>سعر الصرف TL</label>
           <input type="number" step="0.01" min="0" id="cur-rate" placeholder="سعر الصرف مقابل TL">
         </div>
-
         <div>
           <label>ملاحظة</label>
           <input type="text" id="cur-note" placeholder="تفاصيل إضافية إن وجدت">
         </div>
       </div>
-
       <div class="action-row">
         <button class="btn-action btn-sell" onclick="saveCurrency('sell')">
           <i class="fas fa-arrow-right-from-bracket"></i> بيع
@@ -510,22 +442,18 @@
         </button>
       </div>
     </div>
-
     <div class="report-controls">
-      <button class="report-btn btn-day"  onclick="generateReport('currency','daily')">تقرير يومي</button>
+      <button class="report-btn btn-day" onclick="generateReport('currency','daily')">تقرير يومي</button>
       <button class="report-btn btn-week" onclick="generateReport('currency','weekly')">تقرير أسبوعي</button>
       <button class="report-btn btn-print" id="currency-print-btn" style="display:none;" onclick="printReport('currency')">
         <i class="fas fa-print"></i> طباعة / PDF
       </button>
     </div>
-
     <div id="currency-report" class="report-output"></div>
   </div>
-
   <!-- صندوق الحوالات -->
   <div id="transfer" class="section">
     <h2>صندوق الحوالات</h2>
-
     <div class="form-card">
       <h3>عملية حوالة</h3>
       <div class="form-grid">
@@ -533,17 +461,14 @@
           <label>الاسم الكامل</label>
           <input type="text" id="trans-name" placeholder="اسم المرسل / المستلم">
         </div>
-
         <div>
           <label>المبلغ</label>
           <input type="number" step="0.01" min="0" id="trans-amount" placeholder="المبلغ المرسل">
         </div>
-
         <div>
           <label>العمولة TL</label>
           <input type="number" step="0.01" min="0" id="trans-commission" placeholder="العمولة أو الرسوم">
         </div>
-
         <div>
           <label>نوع العملة</label>
           <select id="trans-currency">
@@ -555,7 +480,6 @@
           </select>
         </div>
       </div>
-
       <div class="action-row">
         <button class="btn-action btn-sell" onclick="saveTransfer('out')">
           <i class="fas fa-paper-plane"></i> صادرة
@@ -565,27 +489,22 @@
         </button>
       </div>
     </div>
-
     <div class="report-controls">
-      <button class="report-btn btn-day"  onclick="generateReport('transfer','daily')">تقرير يومي</button>
+      <button class="report-btn btn-day" onclick="generateReport('transfer','daily')">تقرير يومي</button>
       <button class="report-btn btn-week" onclick="generateReport('transfer','weekly')">تقرير أسبوعي</button>
       <button class="report-btn btn-print" id="transfer-print-btn" style="display:none;" onclick="printReport('transfer')">
         <i class="fas fa-print"></i> طباعة / PDF
       </button>
     </div>
-
     <div id="transfer-report" class="report-output"></div>
   </div>
-
 </div>
-
 <!-- Modal للرسائل -->
 <div id="modal" class="modal">
   <div class="modal-content" id="modal-content">
     <p id="modal-message"></p>
   </div>
 </div>
-
 <script>
 // تبديل التبويبات
 document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -596,26 +515,21 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById(btn.dataset.tab).classList.add('active');
   });
 });
-
 // رسائل تنبيه
 function showMessage(msg, type = 'success') {
   const modal = document.getElementById('modal');
   const content = document.getElementById('modal-content');
   const message = document.getElementById('modal-message');
-
   message.textContent = msg;
   content.className = 'modal-content ' + type;
-
   modal.style.display = 'flex';
   setTimeout(() => modal.style.display = 'none', 3500);
 }
-
 // تغيير حقل الكمية ديناميكياً
 function updateGoldQuantityField() {
   const type = document.getElementById('gold-type').value;
   const container = document.getElementById('quantity-container');
   container.innerHTML = '<label id="quantity-label">الكمية</label>';
-
   if (type.startsWith('karat-')) {
     container.innerHTML += '<input type="number" step="0.01" min="0.01" id="gold-qty" placeholder="الوزن بالغرام (مثال: 12.50)">';
     document.getElementById('quantity-label').textContent = 'الوزن (g)';
@@ -651,21 +565,16 @@ function updateGoldQuantityField() {
     document.getElementById('quantity-label').textContent = 'الكمية';
   }
 }
-
 // حفظ عملية ذهب
 function saveGold(direction) {
   const typeEl = document.getElementById('gold-type');
-  const qtyEl  = document.getElementById('gold-qty');
-  const total  = Number(document.getElementById('gold-total').value) || 0;
-  const note   = document.getElementById('gold-note').value.trim();
-
+  const qtyEl = document.getElementById('gold-qty');
+  const total = Number(document.getElementById('gold-total').value) || 0;
+  const note = document.getElementById('gold-note').value.trim();
   if (!typeEl.value) return showMessage('يرجى اختيار النوع / العيار أولاً', 'error');
-
   let qty = qtyEl.tagName === 'SELECT' ? qtyEl.value : Number(qtyEl.value) || 0;
-
   if (qty <= 0) return showMessage('يرجى إدخال كمية صالحة أكبر من صفر', 'error');
   if (total <= 0) return showMessage('يرجى إدخال سعر إجمالي صالح', 'error');
-
   const entry = {
     ts: new Date().toISOString(),
     direction,
@@ -674,29 +583,23 @@ function saveGold(direction) {
     total,
     note
   };
-
   let arr = JSON.parse(localStorage.getItem('gold') || '[]');
   arr.push(entry);
   localStorage.setItem('gold', JSON.stringify(arr));
-
   showMessage(`تم حفظ عملية ${direction === 'sell' ? 'بيع' : 'شراء'} بنجاح`, 'success');
-
   typeEl.value = '';
   updateGoldQuantityField();
   document.getElementById('gold-total').value = '';
   document.getElementById('gold-note').value = '';
 }
-
 // حفظ عملية العملات
 function saveCurrency(direction) {
-  const cur   = document.getElementById('cur-type').value;
-  const amt   = Number(document.getElementById('cur-amount').value) || 0;
-  const rate  = Number(document.getElementById('cur-rate').value) || 0;
-  const note  = document.getElementById('cur-note').value.trim();
-
+  const cur = document.getElementById('cur-type').value;
+  const amt = Number(document.getElementById('cur-amount').value) || 0;
+  const rate = Number(document.getElementById('cur-rate').value) || 0;
+  const note = document.getElementById('cur-note').value.trim();
   if (amt <= 0) return showMessage('المبلغ يجب أن يكون أكبر من صفر', 'error');
   if (rate <= 0) return showMessage('سعر الصرف يجب أن يكون أكبر من صفر', 'error');
-
   const entry = {
     ts: new Date().toISOString(),
     direction,
@@ -706,28 +609,22 @@ function saveCurrency(direction) {
     total: amt * rate,
     note
   };
-
   let arr = JSON.parse(localStorage.getItem('currency') || '[]');
   arr.push(entry);
   localStorage.setItem('currency', JSON.stringify(arr));
-
   showMessage(`تم حفظ عملية ${direction === 'sell' ? 'بيع' : 'شراء'} ${cur} بنجاح`, 'success');
-
   document.getElementById('cur-amount').value = '';
   document.getElementById('cur-rate').value = '';
   document.getElementById('cur-note').value = '';
 }
-
 // حفظ حوالة
 function saveTransfer(direction) {
   const name = document.getElementById('trans-name').value.trim();
-  const amt  = Number(document.getElementById('trans-amount').value) || 0;
-  const com  = Number(document.getElementById('trans-commission').value) || 0;
-  const cur  = document.getElementById('trans-currency').value;
-
+  const amt = Number(document.getElementById('trans-amount').value) || 0;
+  const com = Number(document.getElementById('trans-commission').value) || 0;
+  const cur = document.getElementById('trans-currency').value;
   if (!name) return showMessage('يرجى إدخال الاسم الكامل', 'error');
   if (amt <= 0) return showMessage('المبلغ يجب أن يكون أكبر من صفر', 'error');
-
   const entry = {
     ts: new Date().toISOString(),
     direction,
@@ -736,43 +633,34 @@ function saveTransfer(direction) {
     com,
     cur
   };
-
   let arr = JSON.parse(localStorage.getItem('transfer') || '[]');
   arr.push(entry);
   localStorage.setItem('transfer', JSON.stringify(arr));
-
   showMessage(`تم حفظ حوالة ${direction === 'out' ? 'صادرة' : 'واردة'} بنجاح`, 'success');
-
   document.getElementById('trans-name').value = '';
   document.getElementById('trans-amount').value = '';
   document.getElementById('trans-commission').value = '';
 }
-
 // عرض التقرير
 function generateReport(box, period) {
   const reportDiv = document.getElementById(box + '-report');
   const printBtn = document.getElementById(box + '-print-btn');
-
   let data = JSON.parse(localStorage.getItem(box) || '[]');
   let now = new Date();
   let start = new Date(now);
   if (period === 'daily') start.setHours(0,0,0,0);
   else start.setDate(now.getDate() - 7);
-
   let filtered = data.filter(e => new Date(e.ts) >= start);
-
   if (filtered.length === 0) {
     reportDiv.innerHTML = '<p style="text-align:center; color:#9ca3af; padding:2rem; font-size:1.1rem;">لا توجد عمليات في هذه الفترة</p>';
     reportDiv.classList.add('show');
     printBtn.style.display = 'inline-block';
     return;
   }
-
   let html = `<h4>تقرير ${period === 'daily' ? 'اليوم' : 'الأسبوع'} – ${now.toLocaleDateString('en-GB')}</h4>`;
   let tableBody = '';
   let totalProfit = 0;
   let stock = {};
-
   if (box === 'gold') {
     const types = [...new Set(filtered.map(e => e.type))];
     types.forEach(t => {
@@ -780,13 +668,12 @@ function generateReport(box, period) {
       filtered.forEach(e => {
         if (e.type === t) {
           if (e.direction === 'sell') { sellQty += Number(e.qty) || 0; sellTotal += Number(e.total) || 0; }
-          if (e.direction === 'buy')  { buyQty  += Number(e.qty) || 0; buyTotal  += Number(e.total) || 0; }
+          if (e.direction === 'buy') { buyQty += Number(e.qty) || 0; buyTotal += Number(e.total) || 0; }
         }
       });
       let profit = sellTotal - buyTotal;
       totalProfit += profit;
       stock[t] = (stock[t] || 0) + (buyQty - sellQty);
-
       tableBody += `
         <tr>
           <td>${t}</td>
@@ -796,7 +683,6 @@ function generateReport(box, period) {
         </tr>
       `;
     });
-
     html += `
       <table class="report-table">
         <thead>
@@ -809,12 +695,10 @@ function generateReport(box, period) {
         </thead>
         <tbody>${tableBody}</tbody>
       </table>
-
       <div class="stock-summary">
         <h5>إجمالي الموجودات حالياً</h5>
         ${Object.entries(stock).map(([t, q]) => `<p><strong>${t}:</strong> ${Number(q).toFixed(2)}</p>`).join('')}
       </div>
-
       <div class="total-profit ${totalProfit >= 0 ? 'positive' : 'negative'}">
         الربح / الخسارة الإجمالي: ${totalProfit.toLocaleString('en-US')} TL
       </div>
@@ -826,13 +710,12 @@ function generateReport(box, period) {
       filtered.forEach(e => {
         if (e.cur === c) {
           if (e.direction === 'sell') { sellAmt += Number(e.amt) || 0; sellTL += Number(e.total) || 0; }
-          if (e.direction === 'buy')  { buyAmt  += Number(e.amt) || 0; buyTL  += Number(e.total) || 0; }
+          if (e.direction === 'buy') { buyAmt += Number(e.amt) || 0; buyTL += Number(e.total) || 0; }
         }
       });
       let profit = sellTL - buyTL;
       totalProfit += profit;
       stock[c] = (stock[c] || 0) + (buyAmt - sellAmt);
-
       if (sellAmt > 0 || buyAmt > 0) {
         tableBody += `
           <tr>
@@ -844,7 +727,6 @@ function generateReport(box, period) {
         `;
       }
     });
-
     html += `
       <table class="report-table">
         <thead>
@@ -857,12 +739,10 @@ function generateReport(box, period) {
         </thead>
         <tbody>${tableBody}</tbody>
       </table>
-
       <div class="stock-summary">
         <h5>إجمالي الموجودات حالياً</h5>
         ${Object.entries(stock).map(([c, a]) => `<p><strong>${c}:</strong> ${Number(a).toFixed(2)}</p>`).join('')}
       </div>
-
       <div class="total-profit ${totalProfit >= 0 ? 'positive' : 'negative'}">
         الربح / الخسارة الإجمالي: ${totalProfit.toLocaleString('en-US')} TL
       </div>
@@ -874,13 +754,12 @@ function generateReport(box, period) {
       filtered.forEach(e => {
         if (e.cur === c) {
           if (e.direction === 'out') outCom += Number(e.com) || 0;
-          if (e.direction === 'in')  inCom  += Number(e.com) || 0;
+          if (e.direction === 'in') inCom += Number(e.com) || 0;
         }
       });
       let com = outCom + inCom;
       totalProfit += com;
       stock[c] = (stock[c] || 0) + (inCom - outCom);
-
       if (outCom > 0 || inCom > 0) {
         tableBody += `
           <tr>
@@ -892,7 +771,6 @@ function generateReport(box, period) {
         `;
       }
     });
-
     html += `
       <table class="report-table">
         <thead>
@@ -905,23 +783,19 @@ function generateReport(box, period) {
         </thead>
         <tbody>${tableBody}</tbody>
       </table>
-
       <div class="stock-summary">
         <h5>إجمالي الموجودات حالياً</h5>
         ${Object.entries(stock).map(([c, a]) => `<p><strong>${c}:</strong> ${Number(a).toFixed(2)}</p>`).join('')}
       </div>
-
       <div class="total-profit positive">
         إجمالي العمولات: ${totalProfit.toLocaleString('en-US')} TL
       </div>
     `;
   }
-
   reportDiv.innerHTML = html;
   reportDiv.classList.add('show');
   document.getElementById(box + '-print-btn').style.display = 'inline-block';
 }
-
 // طباعة التقرير مع اللوغو
 function printReport(box) {
   const reportDiv = document.getElementById(box + '-report');
@@ -929,7 +803,6 @@ function printReport(box) {
     showMessage('يرجى عرض تقرير أولاً', 'error');
     return;
   }
-
   const printContent = reportDiv.innerHTML;
   const printWindow = window.open('', '_blank');
   printWindow.document.write(`
@@ -952,7 +825,7 @@ function printReport(box) {
       </head>
       <body>
         <div class="print-logo">
-          <img src="https://i.imgur.com/لوغوك_هون_512.png" alt="SARRAFALAR ÇAVUŞ">
+          <img src="logo.png" alt="SARRAFALAR ÇAVUŞ">
         </div>
         ${printContent}
       </body>
@@ -964,5 +837,4 @@ function printReport(box) {
 }
 </script>
 </body>
-
 </html>
